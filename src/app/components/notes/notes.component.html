@@ -14,3 +14,7 @@
     <button class="save" (click)="saveNotes()"></button>
     </div>
 </div>
+<div [class.show-message]="store.message.length" class="message">
+    <h3>Success</h3>
+    <h4>{{store.message}}</h4>
+</div>

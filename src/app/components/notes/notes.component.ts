@@ -11,7 +11,7 @@ export class NotesComponent {
 
     public chosenDate: CalendarDay;
 
-    constructor(private store: StoreService) {
+    constructor(public store: StoreService) {
     }
 
     public saveNotes() {

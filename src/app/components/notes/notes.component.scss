@@ -57,3 +57,27 @@
         background-color: greenyellow;
     }
 }
+
+.show-message {
+    transition: all 1s ease-out;
+    opacity: .9 !important;
+}
+.message {
+    transition: all 1s ease-out;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    h3 {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    h4 {
+        margin: 0;
+    }
+}

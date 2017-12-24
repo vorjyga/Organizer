@@ -9,6 +9,7 @@ export class StoreService {
 
     public notesObservable: Observable<any[]>;
     public incomingNotes: Array<IncomingNotesModel>;
+    public message = '';
 
     public selectedWeather: any;
 
@@ -21,6 +22,16 @@ export class StoreService {
     pushNotes(dateNotes: CalendarDay) {
         let noteDate = dateNotes.date.format('DD MMM YYYY')
         this.db.list('/notes').update(noteDate, new IncomingNotesModel(noteDate, dateNotes.notes))
+            .then(() => {
+                this.showSuccessMessage();
+
+            })
+    }
+    private showSuccessMessage() {
+        this.message = 'Successfully uploaded';
+        setTimeout(() => {
+            this.message = '';
+        }, 2000);
     }
 
 }
