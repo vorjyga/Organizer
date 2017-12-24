@@ -1,0 +1,36 @@
+<div class="calendar" *ngIf="calendar.length">
+    <table>
+        <tr>
+            <th>пн</th>
+            <th>вт</th>
+            <th>ср</th>
+            <th>чт</th>
+            <th>пт</th>
+            <th>сб</th>
+            <th>вс</th>
+        </tr>
+        <tr *ngFor="let week of calendar">
+            <td *ngFor="let day of week.days"
+                [class.other-month]="day.date.format('M')!==calendarDate.format('M')"
+                [class.active]="day.isActive"
+                (click)="setActiveDay(day)">
+                <div class="upper-part">
+                    <div [class.has-notes]="day.notes && day.notes.length"></div>
+                    <div class="date">
+                        {{day.date.format("D")}}
+                    </div>
+                </div>
+                <div class="weather-part" *ngIf="store.selectedWeather; else elseblock">
+                    <div class="temperature-block">
+                        <span class="low" *ngIf="day.low">Lo: {{day.low}}</span>
+                        <span class="high" *ngIf="day.high">Hi: {{day.high}}</span>
+                    </div>
+                        <div class="text" *ngIf="day.text">{{day.text}}</div>
+                </div>
+                <ng-template #elseblock>
+                    <div class="empty-space"></div>
+                </ng-template>
+            </td>
+        </tr>
+    </table>
+</div>

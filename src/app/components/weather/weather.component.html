@@ -1,0 +1,18 @@
+<div class="weather-block">
+    <input class="weather-input" tabindex="1" type="text" [(ngModel)]="inputSearch" (keyup)="startTimer($event)"
+           (keyup.arrowup)="changeActive('up')"
+           (keyup.arrowdown)="changeActive('down')"
+           (keyup.enter)="getActiveWeather()">
+    <div *ngIf="placeOptions.length" class="place-options">
+        <div *ngFor="let place of placeOptions;"
+             class="place-option"
+             (click)="getActiveWeather(place)"
+             [class.active]="place.isActive">{{place.name}}
+        </div>
+    </div>
+</div>
+<div [class.showError]="showError" class="error">
+    <h3>Error</h3>
+    <h4>{{error}}</h4>
+</div>
+

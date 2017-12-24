@@ -1,0 +1,16 @@
+<div class="notes-block" *ngIf="chosenDate">
+    <div class="title">
+        Organizer {{chosenDate.date.format('DD MM YYYY')}}
+    </div>
+    <div *ngIf="chosenDate && chosenDate.notes">
+        <div class="notes" *ngFor="let dateNote of chosenDate.notes; let i = index">
+            <input class="input-note" type="text" [(ngModel)]="dateNote.text">
+            <button class="delete" (click)="chosenDate.notes.splice(i, 1)"></button>
+        </div>
+    </div>
+    
+    <div class="btn-block">
+    <button class="add" (click)="addNote()"></button>
+    <button class="save" (click)="saveNotes()"></button>
+    </div>
+</div>

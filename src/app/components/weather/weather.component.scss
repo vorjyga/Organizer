@@ -1,0 +1,58 @@
+.weather-block {
+    position: relative;
+    width: 185px;
+    margin-top: 45px;
+}
+.place-options {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    box-shadow: -1px 0px 3px 0px;
+}
+.place-option {
+    padding: 5px;
+    width: 18.9rem;
+    cursor: pointer;
+}
+
+.active {
+    background-color: dodgerblue;
+    color: white;
+}
+h2 {
+    margin-bottom: 5px;
+}
+.weather-input {
+    padding: 5px;
+    outline: none;
+    height: 25px;
+    width: 30rem;
+    max-width: 300px;
+
+    &:focus {
+        outline: 1px solid black;
+    }
+}
+.showError {
+    transition: all 1s ease-out;
+    opacity: .9 !important;
+}
+.error {
+    transition: all 1s ease-out;
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    h3 {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    h4 {
+        margin: 0;
+    }
+}

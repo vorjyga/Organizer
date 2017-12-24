@@ -1,0 +1,63 @@
+.calendar {
+    box-shadow: 1px -1px 2px 0px;
+}
+table {
+    min-width: auto;
+    min-height: auto;
+}
+th {
+    font-size: 30px;
+    vertical-align: bottom;
+    height: 40px;
+}
+td {
+    height: 80px;
+    width: 80px;
+    background-color: lightgray;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+    .upper-part {
+        display: flex;
+        justify-content: space-between;
+        height: 25px;
+        padding: 3px;
+        margin-bottom: 3px;
+        .date {
+            font-size: 20px;
+        }
+        .has-notes {
+            width: 20px;
+            height: 20px;
+            background-color: crimson;
+        }
+    }
+    .weather-part {
+        height: 55px;
+        font-size: 13px;
+        overflow: hidden;
+        .temperature-block {
+            text-align: center;
+        }
+        .text {
+            text-overflow: elipsis;
+            margin: 3px;
+        }
+
+
+    }
+    .empty-space {
+        height: 55px;
+    }
+}
+
+.other-month {
+    opacity: .4;
+}
+
+.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+
