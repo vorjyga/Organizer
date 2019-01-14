@@ -12,7 +12,9 @@ export class YqlService {
     }
 
     private sendRequest(yql): Promise<any> {
-        return fetch(`https://query.yahooapis.com/v1/public/yql?q=${encodeURIComponent(yql)}&format=json`).then(response => {
+        return fetch(`https://query.yahooapis.com/v1/public/yql?q=${encodeURIComponent(yql)}&format=json`, {
+            method: 'GET'
+        }).then(response => {
             return response.json();
         });
     }

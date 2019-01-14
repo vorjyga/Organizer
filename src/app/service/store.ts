@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs/Observable";
-import {IncomingNotesModel} from "../models/notes.model";
-import {AngularFireDatabase} from "angularfire2/database";
-import {CalendarDay} from "../models/calendar-day.model";
+import {CalendarDay} from 'app/models/calendar-day.model';
+import {IncomingNotesModel} from 'app/models/notes.model';
+import {Observable} from 'rxjs/Observable';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Injectable()
 export class StoreService {
@@ -20,7 +20,7 @@ export class StoreService {
 
     // Обновление данных о заметках выбранного дня.
     pushNotes(dateNotes: CalendarDay) {
-        let noteDate = dateNotes.date.format('DD MMM YYYY')
+        const noteDate = dateNotes.date.format('DD MMM YYYY')
         this.db.list('/notes').update(noteDate, new IncomingNotesModel(noteDate, dateNotes.notes))
             .then(() => {
                 this.showSuccessMessage();
